@@ -23,17 +23,19 @@ public class Person {
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private final Set<Remark> remarks = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
+    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags, Set<Remark> remarks) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         this.tags.addAll(tags);
+        this.remarks.addAll(remarks);
     }
 
     public Name getName() {
@@ -59,6 +61,11 @@ public class Person {
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
     }
+
+    public Set<Remark> getRemarks() {
+        return Collections.unmodifiableSet(remarks);
+    }
+
 
     /**
      * Returns true if both persons have the same name.
