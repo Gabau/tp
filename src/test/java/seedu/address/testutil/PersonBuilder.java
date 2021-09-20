@@ -88,6 +88,11 @@ public class PersonBuilder {
         return this;
     }
 
+    public PersonBuilder withRemark(String...remarks) {
+        this.remarks = SampleDataUtil.getRemarkSet(remarks);
+        return this;
+    }
+
     public Person build() {
         return new Person(name, phone, email, address, tags, remarks);
     }

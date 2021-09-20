@@ -29,9 +29,9 @@ public class RemarkCommand extends Command {
     private final Index index;
     private final String remark;
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Edits the remark of the person identified "
+            + ": Adds a remark of the person identified "
             + "by the index number used in the last person listing. "
-            + "Existing remark will be overwritten by the input.\n"
+            + "\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "r/ [REMARK]\n"
             + "Example: " + COMMAND_WORD + " 1 "
