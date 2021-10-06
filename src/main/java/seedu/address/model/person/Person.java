@@ -1,7 +1,9 @@
 package seedu.address.model.person;
 
+import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.time.DayOfWeek;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
@@ -24,6 +26,7 @@ public class Person {
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
 
+
     /**
      * Every field must be present and not null.
      */
@@ -35,6 +38,9 @@ public class Person {
         this.address = address;
         this.tags.addAll(tags);
     }
+
+
+
 
     public Name getName() {
         return name;
@@ -71,6 +77,21 @@ public class Person {
 
         return otherStaff != null
                 && otherStaff.getName().equals(getName());
+    }
+
+
+
+    /**
+     * Returns true if Person is working on during
+     * the input shift.
+     * @param date The date of the shift.
+     * @param slot The slot of the shift.
+     * @return True if this person is working during this shift.
+     */
+    public boolean isWorking(DayOfWeek date, Slot slot) {
+        requireAllNonNull(date, slot);
+        //todo:
+        return true;
     }
 
     /**
